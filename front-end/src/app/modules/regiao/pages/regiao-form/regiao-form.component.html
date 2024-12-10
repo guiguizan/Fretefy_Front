@@ -1,0 +1,34 @@
+<div class="header-bar">
+  <h2 class="titulo">{{ titulo }}</h2>
+  <button class="x-button" (click)="cancelar()" type="button" aria-label="Fechar">×</button>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <div>
+    <fieldset class="nome-regiao-fieldset">
+      <legend>Nome da região *</legend>
+      <input formControlName="nome" type="text" />
+    </fieldset>
+    <div *ngIf="form.get('nome').touched && form.get('nome').invalid" class="text-danger">
+      O nome da região é obrigatório.
+    </div>
+  </div>
+
+  <div formArrayName="cidades">
+    <h3 class="locais-da-regiao">Locais da região</h3>
+    <div *ngFor="let c of cidadesArray.controls; let i = index" class="local-item" >
+      <app-cidade-select class="cidade-select" [control]="c"></app-cidade-select>
+      <button type="button" (click)="removeCidade(i)" class="btn-remover">×</button>
+    </div>
+    <button type="button" (click)="addCidade()" class="btn-adicionar-local">Adicionar local</button>
+  </div>
+
+  <div class="actions">
+    <button type="button" (click)="cancelar()" class="btn-secondary">
+      Cancelar
+    </button>
+    <button type="submit" [disabled]="form.invalid" class="btn-primary">
+      Salvar
+    </button>
+  </div>
+</form>

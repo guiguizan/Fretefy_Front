@@ -1,0 +1,15 @@
+<fieldset class="cidade-fieldset">
+    <legend>Cidade</legend>
+    <div  class="cidade-input-wrapper">
+      <select [formControl]="control">
+        <option value="">Selecione uma cidade</option>
+        <option *ngFor="let cidade of cidades$ | async" [value]="cidade.nome + ',' + cidade.uf">
+          {{ cidade.nome }}
+        </option>
+      </select>
+
+      <button type="button" class="cidade-remove-btn" (click)="resetCidade()">×</button>
+      <span class="cidade-arrow">▼</span>
+    </div>
+  </fieldset>
+  

@@ -1,0 +1,248 @@
+:host {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1E2A32;
+      margin-bottom: 20px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        color: #4F5E6A;
+      }
+      
+      .text-danger {
+        font-size: 0.85rem;
+        margin-top: -6px;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1E2A32;
+        margin-bottom: 16px;
+      }
+  
+ 
+      [formArrayName="cidades"] {
+        margin-bottom: 24px;
+        
+  
+        button {
+          margin-bottom: 12px;
+        }
+  
+        .local-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 10px;
+  
+          select {
+            flex: 1;
+          }
+  
+          .btn-remover {
+            background: none;
+            border: none;
+            color: #B00020;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+  
+            &:hover {
+              background: rgba(176, 0, 32, 0.1);
+            }
+          }
+        }
+      }
+  
+      .btn-adicionar-local {
+        
+        display: inline-flex;
+        align-items: center;
+        background: #E7EDF3;
+        border: none;
+        border-radius: 24px;
+        color: #005B96;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-left: 30%;
+        
+        &:hover {
+          background: #D3E2ED;
+        }
+      
+        &::before {
+          content: "+";
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          background: #005B96;
+          color: #ffffff;
+          border-radius: 50%;
+          margin-right: 8px;
+          font-size: 14px;
+          line-height: 1;
+        }
+      }
+
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+  
+        button {
+          border: none;
+          border-radius: 4px;
+          padding: 10px 16px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+  
+          &.btn-primary {
+            background: #005B96;
+            color: #ffffff;
+  
+            &:disabled {
+              background: #7DA3C3;
+              cursor: not-allowed;
+            }
+  
+            &:hover:enabled {
+              background: #00487B;
+            }
+          }
+  
+          &.btn-secondary {
+            background: #E7EDF3;
+            color: #1E2A32;
+  
+            &:hover {
+              background: #D3E2ED;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+  .nome-regiao-fieldset {
+    border: 2px solid #003458;
+    border-radius: 4px;
+    padding: 0;
+    position: relative;
+    margin-bottom: 16px;
+    width: 91%;
+  
+    legend {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1E2A32;
+      padding: 0 8px;
+      margin-left: 10px;
+      line-height: normal;
+    }
+  
+    input {
+      border: none;
+      background: transparent;
+      font-size: 0.95rem;
+      color: #1E2A32;
+      width: 100%;
+      padding: 10px 12px;
+      box-sizing: border-box;
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .text-danger {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    color: #B00020;
+  }
+
+  .locais-da-regiao {
+    font-size: 1rem !important;  
+    font-weight: 600 !important;   
+    color: #375d77 !important;    
+    margin-bottom: 16px !important;
+  }
+  
+  .cidade-select{
+   width: 100% !important;
+    margin-left: 20px;
+  }
+
+  .titulo{
+    font-size: 1.25rem !important;     
+    font-weight: 400 !important;      
+    color: #7D8A97 !important; 
+    margin-bottom: 20px !important;
+  }
+
+  .header-bar {
+    display: flex;
+    align-items: center;  
+    justify-content: space-between; 
+    margin-bottom: 20px;   
+  }
+  
+  .titulo {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #7D8A97;
+    margin: 0;
+  }
+  
+  .x-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #E7EDF3;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #005B96;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 15px !important;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  

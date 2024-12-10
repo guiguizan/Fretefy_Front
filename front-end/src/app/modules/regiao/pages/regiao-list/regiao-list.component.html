@@ -1,0 +1,36 @@
+<div class="regioes-list-container">
+  <div class="header">
+    <h2>Regiões</h2>
+    <div class="actions-header">
+      <a routerLink="/regiao/cadastrar" class="btn-cadastrar">Cadastrar</a>
+      <button (click)="exportar()" class="btn-exportar">Exportar</button>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome da Região</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let regiao of regioes$ | async">
+        <td>{{ regiao.nome }}</td>
+        <td>{{ regiao.ativo ? 'Ativa' : 'Inativa' }}</td>
+        <td  class="acoes-col" (click)="$event.stopPropagation()">
+          <div class="dropdown-container" [class.open]="openedRegiao === regiao.id">
+            <button class="acoes-menu-btn" (click)="toggleMenu(regiao.id)">⋮</button>
+            <ul class="acoes-dropdown" *ngIf="openedRegiao === regiao.id">
+              <li (click)="ativarDesativar(regiao)">
+                {{ regiao.ativo ? 'Desativar' : 'Ativar' }}
+              </li>
+              <li (click)="editarRegiao(regiao.id)">Editar</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
